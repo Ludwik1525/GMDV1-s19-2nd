@@ -1,11 +1,12 @@
-Requirements:
-    -3D!
-    -Basic gameobject animations
-    -Character animation
-    -Shaders / image effects
-    -Textures
-    -A custom skybox
-    -Multiple lights
-    -Particles
-    -Imported 3D assets
-    -Audio (background music and effects)
+Requirements:<br/>
+<br/>
+    -3D!<br/>
+    -Basic gameobject animations<br/>
+    -Character animation<br/>
+    -Shaders / image effects<br/>
+    -Textures<br/>
+    -A custom skybox<br/>
+    -Multiple lights<br/>
+    -Particles<br/>
+    -Imported 3D assets<br/>
+    -Audio (background music and effects)<br/>
