@@ -62,6 +62,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\AnimController.cs" />
+    <Compile Include="Assets\Scripts\CameraAdjusting.cs" />
     <Compile Include="Assets\Scripts\PlayerMovement.cs" />
     <Compile Include="Assets\Scripts\PlayerSounds.cs" />
     <None Include="Assets\Materials\Shaders\Vertex_Color_Unlit.shader" />
