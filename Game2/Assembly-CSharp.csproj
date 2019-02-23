@@ -65,6 +65,7 @@
     <Compile Include="Assets\Scripts\CameraAdjusting.cs" />
     <Compile Include="Assets\Scripts\PlayerMovement.cs" />
     <Compile Include="Assets\Scripts\PlayerSounds.cs" />
+    <Compile Include="Assets\Scripts\StartGame.cs" />
     <None Include="Assets\Materials\Shaders\Vertex_Color_Unlit.shader" />
     <None Include="Assets\Materials\Shaders\Vertex_Color_Basic.shader" />
     <Reference Include="UnityEditor.StandardEvents">
