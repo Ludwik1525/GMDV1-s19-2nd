@@ -10,6 +10,7 @@ GameObject:
   - component: {fileID: 433264}
   - component: {fileID: 3322384}
   - component: {fileID: 2340500}
+  - component: {fileID: 65251505374476460}
   m_Layer: 0
   m_Name: Mixed_Palm_tree_01
   m_TagString: Untagged
@@ -25,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 163980}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -83,3 +84,15 @@ Prefab:
   m_SourcePrefab: {fileID: 0}
   m_RootGameObject: {fileID: 163980}
   m_IsPrefabAsset: 1
+--- !u!65 &65251505374476460
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 163980}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 5.427741, y: 7.3967075, z: 5.373109}
+  m_Center: {x: -1.6204242, y: 3.7292614, z: 0.875122}
