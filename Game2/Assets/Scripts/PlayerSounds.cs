@@ -15,13 +15,22 @@ public class PlayerSounds : MonoBehaviour
     }
 
     //bool for determining whether the sound is already being played or not
-    bool isPlaying = false;
+    public bool isPlaying = false;
     //bool for determining whether the player is already running or not
-    bool isRunning = false;
+    public bool isRunning = false;
     //bool for determining whether the player is already walking or not
-    bool isWalkingBack = false;
+    public bool isWalkingBack = false;
+    //bool for determining whether the player is in the air or not
+    public bool isGrounded;
 
-	void Update () {
+    //function to determine whether the player is in the air or not
+    void OnCollisionStay()
+    {
+        isGrounded = true;
+        source.enabled = true;
+    }
+
+    void Update () {
 
         //sound for going backwards
         if (Input.GetKey(KeyCode.S))
@@ -34,8 +43,17 @@ public class PlayerSounds : MonoBehaviour
                 isPlaying = true;
             }
         }
+        
+        //disable sound while jumping
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            if(isGrounded)
+            {
+                source.enabled = false;
+            }
+        }
 
-        //sound for walking and running
+        //sounds for walking and running
         if (Input.GetKey(KeyCode.W))
         {
             //sound for running
@@ -57,6 +75,7 @@ public class PlayerSounds : MonoBehaviour
                 }
             }
 
+            //sound for slow walking forward
             else if (Input.GetKey(KeyCode.S))
             {
                 if (!isWalkingBack)
@@ -74,7 +93,8 @@ public class PlayerSounds : MonoBehaviour
                     isPlaying = true;
                 }
             }
-            //sound for walking
+
+            //sound for normal walking
             else
             {
                 if(isRunning)
@@ -91,6 +111,18 @@ public class PlayerSounds : MonoBehaviour
                     source.Play();
                     isPlaying = true;
                 }
+            }
+        }
+
+        //sound for turning around
+        if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D))
+        {
+            if (!isPlaying)
+            {
+                source.loop = true;
+                source.clip = goingBackwards;
+                source.Play();
+                isPlaying = true;
             }
         }
 

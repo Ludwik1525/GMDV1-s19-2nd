@@ -189,6 +189,7 @@ GameObject:
   - component: {fileID: 534669905}
   - component: {fileID: 534669904}
   - component: {fileID: 534669903}
+  - component: {fileID: 534669906}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: Untagged
@@ -256,6 +257,101 @@ Transform:
   m_Father: {fileID: 1043677349}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 30.310001, y: 0, z: 0}
+--- !u!82 &534669906
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 534669902}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: b4a57636a4cc64f6c822a6bd1aec36e9, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!4 &636061562 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 402682, guid: fb9f189dcf5d2ad4aad003a8a44b136d,
@@ -293,6 +389,9 @@ MonoBehaviour:
   rotationDegrees: 90
   runningSpeed: 20
   backwardsSpeed: 5
+  jumpForce: 2
+  jump: {x: 0, y: 0, z: 0}
+  isGrounded: 0
 --- !u!54 &1043677351
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -332,6 +431,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 0}
+  isIdle: 0
+  isGrounded: 0
 --- !u!114 &1043677354
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -343,10 +444,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cec87c75712136b4d9ba571293ff4452, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  running: {fileID: 8300000, guid: d88e6bd959ff29740b3eed6ab266ea36, type: 3}
-  walking: {fileID: 8300000, guid: d34dc405a253cf843883e624f19048d5, type: 3}
-  goingBackwards: {fileID: 8300000, guid: b04cf8501cb49e340a80bb6e111a7d08, type: 3}
+  running: {fileID: 8300000, guid: baf4414d6c8024046bb96cce835fbe26, type: 3}
+  walking: {fileID: 8300000, guid: fc8da02e95435406f89db024451a0bb8, type: 3}
+  goingBackwards: {fileID: 8300000, guid: fd944e20ee6444efa87cef28957898aa, type: 3}
   source: {fileID: 2141225003}
+  isPlaying: 0
+  isRunning: 0
+  isWalkingBack: 0
+  isGrounded: 0
 --- !u!1001 &1063116508
 Prefab:
   m_ObjectHideFlags: 0
@@ -637,7 +742,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400006, guid: 756b0c574f380324a85262e736c0418b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.02
+      value: 0.2500008
       objectReference: {fileID: 0}
     - target: {fileID: 400006, guid: 756b0c574f380324a85262e736c0418b, type: 3}
       propertyPath: m_LocalPosition.z
@@ -705,7 +810,7 @@ GameObject:
   - component: {fileID: 2141225004}
   - component: {fileID: 2141225003}
   m_Layer: 0
-  m_Name: AudioSource
+  m_Name: PlayerSounds
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

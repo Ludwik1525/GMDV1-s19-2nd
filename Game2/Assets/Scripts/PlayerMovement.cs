@@ -11,10 +11,19 @@ public class PlayerMovement : MonoBehaviour {
     public float rotationDegrees = 90;
     public float runningSpeed = 30;
     public float backwardsSpeed = 5;
+    public float jumpForce = 2;
+    public Vector3 jump;
+    public bool isGrounded;
 
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        jump = new Vector3(0.0f, 2.5f, 0.0f);
+    }
+
+    void OnCollisionStay()
+    {
+        isGrounded = true;
     }
 
     void FixedUpdate()
@@ -51,7 +60,15 @@ public class PlayerMovement : MonoBehaviour {
             //moving forward
             else if (Input.GetKey(KeyCode.Space) && !Input.GetKey(KeyCode.A) && !Input.GetKey(KeyCode.D))
             {
-                rb.position += transform.forward * Time.deltaTime * runningSpeed;
+                if (Input.GetKeyDown(KeyCode.E) && isGrounded)
+                {
+                    rb.AddForce(jump * jumpForce, ForceMode.Impulse);
+                    isGrounded = false;
+                }
+                else
+                {
+                    rb.position += transform.forward * Time.deltaTime * runningSpeed;
+                }
             }
             else
             {
@@ -82,14 +99,18 @@ public class PlayerMovement : MonoBehaviour {
             }
         }
 
-        else if (Input.GetKey(KeyCode.A) && !Input.GetKey(KeyCode.S))
+        //turning around
+        else
         {
-            rb.transform.Rotate(0f, -(rotationDegrees) * Time.deltaTime * rotationSpeed, 0f);
-        }
+            if (Input.GetKey(KeyCode.A) && !Input.GetKey(KeyCode.S))
+            {
+                rb.transform.Rotate(0f, -(rotationDegrees) * Time.deltaTime * rotationSpeed, 0f);
+            }
 
-        else if (Input.GetKey(KeyCode.D) && !Input.GetKey(KeyCode.S))
-        {
-            rb.transform.Rotate(0f, rotationDegrees * Time.deltaTime * rotationSpeed, 0f);
+            if (Input.GetKey(KeyCode.D) && !Input.GetKey(KeyCode.S))
+            {
+                rb.transform.Rotate(0f, rotationDegrees * Time.deltaTime * rotationSpeed, 0f);
+            }
         }
     }
 }
