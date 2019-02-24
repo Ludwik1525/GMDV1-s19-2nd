@@ -12,6 +12,7 @@ public class PlayerSounds : MonoBehaviour
     public AudioClip drinking;
     public AudioClip DMGsound;
     public AudioSource source;
+    public AudioSource triggerSource;
 
     void Start()
     {
@@ -144,20 +145,21 @@ public class PlayerSounds : MonoBehaviour
 
     void OnTriggerEnter(Collider col)
     {
-        if (col.gameObject.tag == "Obstacle" || col.gameObject.tag == "Enemy")
-        {
-            source.PlayOneShot(DMGsound);
-        }
+            if (col.gameObject.tag == "Obstacle" || col.gameObject.tag == "Enemy")
+            {
+                triggerSource.PlayOneShot(DMGsound);
+            }
 
-        if (((col.gameObject.tag == "Food" || col.gameObject.tag == "Food2") && gameObject.tag=="PlayerHurt") || col.gameObject.tag == "Drink2")
-        {
-            source.PlayOneShot(eating);
-        }
+            if (((col.gameObject.tag == "Food" || col.gameObject.tag == "Food2") && gameObject.tag == "PlayerHurt") ||
+                col.gameObject.tag == "Drink2")
+            {
+                triggerSource.PlayOneShot(eating);
+            }
 
-        if (col.gameObject.tag == "Drink")
-        {
-            source.PlayOneShot(drinking);
-        }
+            if (col.gameObject.tag == "Drink")
+            {
+                triggerSource.PlayOneShot(drinking);
+            }
     }
 
     void OnTriggerExit(Collider col)
