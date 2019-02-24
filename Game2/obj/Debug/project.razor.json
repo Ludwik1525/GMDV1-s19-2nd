@@ -1,0 +1,14 @@
+{
+  "ProjectFilePath": "c:\\Users\\Rome\\Documents\\Unity projects\\Github Repos\\GMDV2 - excercise2 group repo\\GMDV1-s19-2nd\\Game2\\Assembly-CSharp.csproj",
+  "TargetFramework": "v3.5",
+  "TagHelpers": [],
+  "Configuration": {
+    "ConfigurationName": "UnsupportedRazor",
+    "LanguageVersion": "1.0",
+    "Extensions": [
+      {
+        "ExtensionName": "UnsupportedRazorExtension"
+      }
+    ]
+  }
+}
