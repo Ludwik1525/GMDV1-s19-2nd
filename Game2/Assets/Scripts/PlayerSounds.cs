@@ -8,18 +8,24 @@ public class PlayerSounds : MonoBehaviour
     public AudioClip running;
     public AudioClip walking;
     public AudioClip goingBackwards;
+    public AudioClip eating;
+    public AudioClip drinking;
+    public AudioClip DMGsound;
     public AudioSource source;
 
-    void Start ()
+    void Start()
     {
     }
 
     //bool for determining whether the sound is already being played or not
     public bool isPlaying = false;
+
     //bool for determining whether the player is already running or not
     public bool isRunning = false;
+
     //bool for determining whether the player is already walking or not
     public bool isWalkingBack = false;
+
     //bool for determining whether the player is in the air or not
     public bool isGrounded;
 
@@ -30,7 +36,8 @@ public class PlayerSounds : MonoBehaviour
         source.enabled = true;
     }
 
-    void Update () {
+    void Update()
+    {
 
         //sound for going backwards
         if (Input.GetKey(KeyCode.S))
@@ -43,11 +50,11 @@ public class PlayerSounds : MonoBehaviour
                 isPlaying = true;
             }
         }
-        
+
         //disable sound while jumping
         if (Input.GetKeyDown(KeyCode.E))
         {
-            if(isGrounded)
+            if (isGrounded)
             {
                 source.enabled = false;
             }
@@ -97,7 +104,7 @@ public class PlayerSounds : MonoBehaviour
             //sound for normal walking
             else
             {
-                if(isRunning)
+                if (isRunning)
                 {
                     source.Stop();
                     isRunning = false;
@@ -133,5 +140,28 @@ public class PlayerSounds : MonoBehaviour
             isRunning = false;
             isWalkingBack = false;
         }
+    }
+
+    void OnTriggerEnter(Collider col)
+    {
+        if (col.gameObject.tag == "Obstacle" || col.gameObject.tag == "Enemy")
+        {
+            source.PlayOneShot(DMGsound);
+        }
+
+        if (((col.gameObject.tag == "Food" || col.gameObject.tag == "Food2") && gameObject.tag=="PlayerHurt") || col.gameObject.tag == "Drink2")
+        {
+            source.PlayOneShot(eating);
+        }
+
+        if (col.gameObject.tag == "Drink")
+        {
+            source.PlayOneShot(drinking);
+        }
+    }
+
+    void OnTriggerExit(Collider col)
+    {
+        Update();
     }
 }

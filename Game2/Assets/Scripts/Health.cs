@@ -38,6 +38,7 @@ public class Health : MonoBehaviour
             {
                 healthBarEmpty.transform.position -= new Vector3(1f * Time.deltaTime * obstaclesDMG, 0, 0);
                 currentX -= 1f * Time.deltaTime * obstaclesDMG;
+                this.gameObject.tag = "PlayerHurt";
             }
 
             //load defeat scene if health below 0
@@ -54,6 +55,7 @@ public class Health : MonoBehaviour
             {
                 healthBarEmpty.transform.position -= new Vector3(1f * Time.deltaTime * enemiesDMG, 0, 0);
                 currentX -= 1f * Time.deltaTime * enemiesDMG;
+                this.gameObject.tag = "PlayerHurt";
             }
 
             //load defeat scene if health below 0
@@ -71,6 +73,7 @@ public class Health : MonoBehaviour
                 healthBarEmpty.transform.position += new Vector3(fullHealth-currentX, 0, 0);
                 currentX = fullHealth;
                 enterFood = false;
+                this.gameObject.tag = "PlayerHealthy";
             }
             else
             {
@@ -125,5 +128,4 @@ public class Health : MonoBehaviour
             enterEnemy = false;
         }
     }
-
 }

@@ -22,9 +22,10 @@ GameObject:
   - component: {fileID: 114352124602244838}
   - component: {fileID: 65257954413416826}
   - component: {fileID: 65528906336810626}
+  - component: {fileID: 54244463244671286}
   m_Layer: 0
   m_Name: Watermelon
-  m_TagString: Drink
+  m_TagString: Drink2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -129,9 +130,9 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1228912776443452}
-  m_LocalRotation: {x: 0.047089502, y: 0.70553595, z: -0.04708978, w: 0.7055382}
-  m_LocalPosition: {x: -12.15, y: 0.57, z: 10.15555}
-  m_LocalScale: {x: 10, y: 10, z: 10}
+  m_LocalRotation: {x: -0.46559358, y: 0.46559173, z: -0.5321868, w: 0.5321881}
+  m_LocalPosition: {x: -0.12149999, y: 0.101555504, z: -0.008000012}
+  m_LocalScale: {x: 0.10000001, y: 0.1, z: 0.099999994}
   m_Children:
   - {fileID: 4826258686770744}
   - {fileID: 4357084770534526}
@@ -334,6 +335,21 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1900766090812714}
   m_Mesh: {fileID: 4300004, guid: bd0e2ca1327ae554895f8aa577407b2f, type: 3}
+--- !u!54 &54244463244671286
+Rigidbody:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1228912776443452}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!65 &65257954413416826
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -344,7 +360,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 0.15, y: 0.16, z: 0.16}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!65 &65528906336810626
 BoxCollider:
@@ -356,7 +372,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 0.15, y: 0.16, z: 0.16}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &114352124602244838
 MonoBehaviour:

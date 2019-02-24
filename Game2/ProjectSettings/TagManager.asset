@@ -12,6 +12,8 @@ TagManager:
   - Eaten
   - Food2
   - Drink2
+  - PlayerHealthy
+  - PlayerHurt
   layers:
   - Default
   - TransparentFX
