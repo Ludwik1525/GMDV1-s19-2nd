@@ -9,6 +9,9 @@ TagManager:
   - Enemy
   - Food
   - Drink
+  - Eaten
+  - Food2
+  - Drink2
   layers:
   - Default
   - TransparentFX

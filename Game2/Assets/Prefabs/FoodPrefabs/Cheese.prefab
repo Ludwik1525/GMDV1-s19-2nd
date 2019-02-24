@@ -55,9 +55,10 @@ GameObject:
   - component: {fileID: 4732421097043446}
   - component: {fileID: 114573382542952664}
   - component: {fileID: 65597615219422908}
+  - component: {fileID: 65890949802139158}
   m_Layer: 0
   m_Name: Cheese
-  m_TagString: Food
+  m_TagString: Food2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -128,9 +129,9 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1268511459518578}
-  m_LocalRotation: {x: -0, y: -0, z: -0.2588186, w: 0.965926}
-  m_LocalPosition: {x: 0.712, y: 0.129, z: 0.497}
-  m_LocalScale: {x: 10, y: 10, z: 10}
+  m_LocalRotation: {x: -0, y: -0, z: 0.026367314, w: 0.9996523}
+  m_LocalPosition: {x: -2.05, y: 0.3, z: 2.65}
+  m_LocalScale: {x: 4.8617, y: 4.8617, z: 4.8617}
   m_Children:
   - {fileID: 4072938139177506}
   - {fileID: 4071367589239782}
@@ -138,7 +139,7 @@ Transform:
   - {fileID: 4744528373721992}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -30.000002}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 3.022}
 --- !u!4 &4744528373721992
 Transform:
   m_ObjectHideFlags: 1
@@ -341,6 +342,18 @@ BoxCollider:
   m_GameObject: {fileID: 1268511459518578}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!65 &65890949802139158
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1268511459518578}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}

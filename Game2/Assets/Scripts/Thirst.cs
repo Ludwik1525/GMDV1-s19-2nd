@@ -94,6 +94,15 @@ public class Thirst : MonoBehaviour
             if (currentThirstX < fullThirst)
             {
                 enterDrink = true;
+                col.transform.gameObject.tag = "Eaten";
+            }
+        }
+
+        if (col.gameObject.tag == "Drink2")
+        {
+            if (currentThirstX < fullThirst)
+            {
+                enterDrink = true;
                 col.gameObject.SetActive(false);
             }
         }

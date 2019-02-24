@@ -99,6 +99,15 @@ public class Health : MonoBehaviour
             if(currentX<fullHealth)
             {
                 enterFood = true;
+                col.transform.gameObject.tag = "Eaten";
+            }
+        }
+
+        if (col.gameObject.tag == "Food2")
+        {
+            if (currentX < fullHealth)
+            {
+                enterFood = true;
                 col.gameObject.SetActive(false);
             }
         }

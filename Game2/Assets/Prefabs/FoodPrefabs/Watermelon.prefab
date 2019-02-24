@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4766796992241416}
   - component: {fileID: 114352124602244838}
   - component: {fileID: 65257954413416826}
+  - component: {fileID: 65528906336810626}
   m_Layer: 0
   m_Name: Watermelon
   m_TagString: Drink
@@ -128,8 +129,8 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1228912776443452}
-  m_LocalRotation: {x: 0.18301204, y: 0.6830117, z: -0.18301278, w: 0.6830139}
-  m_LocalPosition: {x: 0.712, y: 0.12, z: -0.614}
+  m_LocalRotation: {x: 0.047089502, y: 0.70553595, z: -0.04708978, w: 0.7055382}
+  m_LocalPosition: {x: -12.15, y: 0.57, z: 10.15555}
   m_LocalScale: {x: 10, y: 10, z: 10}
   m_Children:
   - {fileID: 4826258686770744}
@@ -138,7 +139,7 @@ Transform:
   - {fileID: 4993322137243314}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 30.000002, y: 90.00001, z: 0}
+  m_LocalEulerAnglesHint: {x: 7.6370006, y: 90.00001, z: 0}
 --- !u!4 &4826258686770744
 Transform:
   m_ObjectHideFlags: 1
@@ -341,6 +342,18 @@ BoxCollider:
   m_GameObject: {fileID: 1228912776443452}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!65 &65528906336810626
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1228912776443452}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}

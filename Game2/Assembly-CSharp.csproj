@@ -61,10 +61,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\AssetsStoreStuff\RPG Food &amp; Drinks Pack\Assets\Scripts\Consumer.cs" />
-    <Compile Include="Assets\AssetsStoreStuff\RPG Food &amp; Drinks Pack\Assets\Scripts\Rotator.cs" />
     <Compile Include="Assets\Scripts\AnimController.cs" />
     <Compile Include="Assets\Scripts\CameraAdjusting.cs" />
+    <Compile Include="Assets\Scripts\Consumer.cs" />
     <Compile Include="Assets\Scripts\Health.cs" />
     <Compile Include="Assets\Scripts\PlayerMovement.cs" />
     <Compile Include="Assets\Scripts\PlayerSounds.cs" />
