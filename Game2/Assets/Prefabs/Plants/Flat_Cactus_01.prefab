@@ -10,8 +10,8 @@ GameObject:
   - component: {fileID: 435472}
   - component: {fileID: 3359980}
   - component: {fileID: 2388510}
-  - component: {fileID: 65201574986521890}
-  - component: {fileID: 65461737862577102}
+  - component: {fileID: 64182197170063752}
+  - component: {fileID: 64863466179934442}
   m_Layer: 0
   m_Name: Flat_Cactus_01
   m_TagString: Obstacle
@@ -47,7 +47,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: 77f34d55cab75c741af8e49d369939ba, type: 2}
+  - {fileID: 2100000, guid: 58c777da72e46a142b5b0486a98a5cbb, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -85,20 +85,8 @@ Prefab:
   m_SourcePrefab: {fileID: 0}
   m_RootGameObject: {fileID: 136472}
   m_IsPrefabAsset: 1
---- !u!65 &65201574986521890
-BoxCollider:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 136472}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1.4734354, y: 2.1830645, z: 1.185602}
-  m_Center: {x: 0.028080374, y: 1.0924621, z: -0.12516084}
---- !u!65 &65461737862577102
-BoxCollider:
+--- !u!64 &64182197170063752
+MeshCollider:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -106,6 +94,22 @@ BoxCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1.4734354, y: 2.1830654, z: 1.1856025}
-  m_Center: {x: 0.028080136, y: 1.0924625, z: -0.12515995}
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_SkinWidth: 0.01
+  m_Mesh: {fileID: 4300000, guid: e7464e6962c79794bbfcdb1d60ea5cd1, type: 3}
+--- !u!64 &64863466179934442
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 136472}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 1
+  m_CookingOptions: 14
+  m_SkinWidth: 0.01
+  m_Mesh: {fileID: 4300000, guid: e7464e6962c79794bbfcdb1d60ea5cd1, type: 3}

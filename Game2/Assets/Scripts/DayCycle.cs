@@ -50,7 +50,7 @@ public class DayCycle : MonoBehaviour
 
     void Update()
     {
-        if (this.gameObject.transform.rotation.eulerAngles.x < 175)
+        if (this.gameObject.transform.rotation.eulerAngles.x > 0 && this.gameObject.transform.rotation.eulerAngles.x < 175)
         {
             if(!isPlayingDay)
             {

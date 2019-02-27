@@ -10,8 +10,8 @@ GameObject:
   - component: {fileID: 437750}
   - component: {fileID: 3305104}
   - component: {fileID: 2366874}
-  - component: {fileID: 65169961013321166}
-  - component: {fileID: 65941540908170968}
+  - component: {fileID: 64927566180872972}
+  - component: {fileID: 64422773195347030}
   m_Layer: 0
   m_Name: Flat_Cactus_02
   m_TagString: Obstacle
@@ -25,13 +25,13 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 185962}
-  m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -0.1808, y: -0.0537, z: 0}
-  m_LocalScale: {x: 0.03, y: 0.03, z: 0.03}
+  m_LocalRotation: {x: -0.64182824, y: 0.2967432, z: -0.2967432, w: 0.64182824}
+  m_LocalPosition: {x: 0.20274593, y: -0.08708155, z: 0}
+  m_LocalScale: {x: 0.05, y: 0.05, z: 0.05}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -40.374, y: 90.00001, z: -90.00001}
 --- !u!23 &2366874
 MeshRenderer:
   m_ObjectHideFlags: 1
@@ -47,7 +47,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: 77f34d55cab75c741af8e49d369939ba, type: 2}
+  - {fileID: 2100000, guid: 58c777da72e46a142b5b0486a98a5cbb, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -85,8 +85,8 @@ Prefab:
   m_SourcePrefab: {fileID: 0}
   m_RootGameObject: {fileID: 185962}
   m_IsPrefabAsset: 1
---- !u!65 &65169961013321166
-BoxCollider:
+--- !u!64 &64422773195347030
+MeshCollider:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -94,11 +94,13 @@ BoxCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1.9825699, y: 3.9174871, z: 0.8965005}
-  m_Center: {x: 0.01223734, y: 1.9604475, z: 0.060515635}
---- !u!65 &65941540908170968
-BoxCollider:
+  serializedVersion: 3
+  m_Convex: 1
+  m_CookingOptions: 14
+  m_SkinWidth: 0.01
+  m_Mesh: {fileID: 4300000, guid: 5d68287dfd7269a46bdafd483e2a0426, type: 3}
+--- !u!64 &64927566180872972
+MeshCollider:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -106,6 +108,8 @@ BoxCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1.9825699, y: 3.9174871, z: 0.8965005}
-  m_Center: {x: 0.012237817, y: 1.9604475, z: 0.0605148}
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_SkinWidth: 0.01
+  m_Mesh: {fileID: 4300000, guid: 5d68287dfd7269a46bdafd483e2a0426, type: 3}
