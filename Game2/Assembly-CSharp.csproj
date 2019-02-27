@@ -66,7 +66,7 @@
     <Compile Include="Assets\Scripts\AnimController.cs" />
     <Compile Include="Assets\Scripts\CameraAdjusting.cs" />
     <Compile Include="Assets\Scripts\Consumer.cs" />
-    <Compile Include="Assets\Scripts\DayCycle.cs" />
+    <Compile Include="Assets\Scripts\DayCycleMusic.cs" />
     <Compile Include="Assets\Scripts\Enemy.cs" />
     <Compile Include="Assets\Scripts\Health.cs" />
     <Compile Include="Assets\Scripts\PlayerMovement.cs" />
