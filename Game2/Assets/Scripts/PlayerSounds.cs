@@ -11,8 +11,11 @@ public class PlayerSounds : MonoBehaviour
     public AudioClip eating;
     public AudioClip drinking;
     public AudioClip DMGsound;
+    public AudioClip light;
     public AudioSource source;
+    public AudioSource lightSource;
     public AudioSource triggerSource;
+    public GameObject reflector;
 
     void Start()
     {
@@ -39,6 +42,18 @@ public class PlayerSounds : MonoBehaviour
 
     void Update()
     {
+
+        if (reflector.gameObject.tag == "LightOn")
+        {
+            lightSource.loop = true;
+            lightSource.clip = light;
+            lightSource.Play();
+        }
+
+        if (reflector.gameObject.tag == "LightOff")
+        {
+            lightSource.Stop();
+        }
 
         //sound for going backwards
         if (Input.GetKey(KeyCode.S))

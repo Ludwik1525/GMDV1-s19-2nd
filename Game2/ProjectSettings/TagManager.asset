@@ -14,6 +14,8 @@ TagManager:
   - Drink2
   - PlayerHealthy
   - PlayerHurt
+  - LightOn
+  - LightOff
   layers:
   - Default
   - TransparentFX

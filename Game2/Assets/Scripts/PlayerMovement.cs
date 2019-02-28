@@ -28,6 +28,7 @@ public class PlayerMovement : MonoBehaviour {
 
     void FixedUpdate()
     {
+
         if (Input.GetKey(KeyCode.W))
         {
             //moving forward and rotating to the left simultaneously

@@ -14,6 +14,7 @@ public class Thirst : MonoBehaviour
     public float dehydrationRateNormal;
     //variable to store rate of dehydration while running
     public float dehydrationRateRunning;
+    public float dehydrationRateReflector;
     //variable to determine whether the player entered drink
     public bool enterDrink;
     //variable to store amount of health restored by drink
@@ -25,6 +26,7 @@ public class Thirst : MonoBehaviour
     public float currentHealthX;
     //variable to set HP loss rate if thirst bar is empty
     public float HPlossRate;
+    public GameObject reflector;
 
     void Start()
     {
@@ -41,14 +43,33 @@ public class Thirst : MonoBehaviour
             //set thirst loss while running
             if (Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.Space))
             {
-                thirstBarEmpty.transform.position -= new Vector3(1f * Time.deltaTime * dehydrationRateRunning, 0, 0);
-                currentThirstX -= 1f * Time.deltaTime * dehydrationRateRunning;
+                if(reflector.gameObject.tag == "LightOn")
+                {
+                    thirstBarEmpty.transform.position -=
+                        new Vector3(1f * Time.deltaTime * (dehydrationRateRunning+ dehydrationRateReflector), 0, 0);
+                    currentThirstX -= 1f * Time.deltaTime * (dehydrationRateRunning+ dehydrationRateReflector);
+                }
+                else
+                {
+                    thirstBarEmpty.transform.position -=
+                        new Vector3(1f * Time.deltaTime * dehydrationRateRunning, 0, 0);
+                    currentThirstX -= 1f * Time.deltaTime * dehydrationRateRunning;
+                }
             }
             //set thirst loss while not running
             else
             {
-                thirstBarEmpty.transform.position -= new Vector3(1f * Time.deltaTime * dehydrationRateNormal, 0, 0);
-                currentThirstX -= 1f * Time.deltaTime * dehydrationRateNormal;
+                if (reflector.gameObject.tag == "LightOn")
+                {
+                    thirstBarEmpty.transform.position -=
+                        new Vector3(1f * Time.deltaTime * dehydrationRateReflector, 0, 0);
+                    currentThirstX -= 1f * Time.deltaTime * dehydrationRateReflector;
+                }
+                else
+                {
+                    thirstBarEmpty.transform.position -= new Vector3(1f * Time.deltaTime * dehydrationRateNormal, 0, 0);
+                    currentThirstX -= 1f * Time.deltaTime * dehydrationRateNormal;
+                }
             }
         }
 
