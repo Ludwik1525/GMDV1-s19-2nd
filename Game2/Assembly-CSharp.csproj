@@ -80,9 +80,9 @@
     <Compile Include="Assets\Scripts\TextFadeIn.cs" />
     <Compile Include="Assets\Scripts\Thirst.cs" />
     <Compile Include="Assets\Scripts\TumbleweedMovement.cs" />
-    <None Include="Assets\Materials\Shaders\Vertex_Color_Unlit.shader" />
-    <None Include="Assets\Materials\Shaders\Vertex_Color_Basic.shader" />
-    <None Include="Assets\Prefabs\LowPolyTreePack\readme.txt" />
+    <None Include="Assets\AssetsStoreStuff\Materials\Shaders\Vertex_Color_Unlit.shader" />
+    <None Include="Assets\AssetsStoreStuff\Materials\Shaders\Vertex_Color_Basic.shader" />
+    <None Include="Assets\AssetsStoreStuff\LowPolyTreePack\readme.txt" />
     <None Include="Assets\AssetsStoreStuff\Chibi Mummy\readme.txt" />
     <Reference Include="UnityEditor.StandardEvents">
       <HintPath>C:/Users/mmich/Desktop/GMD/Game2/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>

@@ -10,7 +10,7 @@ GameObject:
   - component: {fileID: 456462}
   - component: {fileID: 3396356}
   - component: {fileID: 2317480}
-  - component: {fileID: 65327911047841824}
+  - component: {fileID: 64688581054808010}
   m_Layer: 0
   m_Name: Flat_Well_01
   m_TagString: Untagged
@@ -84,8 +84,8 @@ Prefab:
   m_SourcePrefab: {fileID: 0}
   m_RootGameObject: {fileID: 133420}
   m_IsPrefabAsset: 1
---- !u!65 &65327911047841824
-BoxCollider:
+--- !u!64 &64688581054808010
+MeshCollider:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -93,6 +93,8 @@ BoxCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 3.202782, y: 3.7066884, z: 3.1072485}
-  m_Center: {x: 0.047766685, y: 1.8533442, z: 0}
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_SkinWidth: 0.01
+  m_Mesh: {fileID: 4300000, guid: d1b3cc5751f113146b7d01d700c186df, type: 3}
