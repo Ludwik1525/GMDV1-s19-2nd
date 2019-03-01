@@ -16,6 +16,7 @@ TagManager:
   - PlayerHurt
   - LightOn
   - LightOff
+  - Collectible
   layers:
   - Default
   - TransparentFX

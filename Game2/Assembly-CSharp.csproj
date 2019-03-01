@@ -65,6 +65,7 @@
     <Compile Include="Assets\AssetsStoreStuff\Chibi Mummy\Misc\Scripts\CharMovement.cs" />
     <Compile Include="Assets\Scripts\AnimController.cs" />
     <Compile Include="Assets\Scripts\CameraAdjusting.cs" />
+    <Compile Include="Assets\Scripts\Collectibles.cs" />
     <Compile Include="Assets\Scripts\Consumer.cs" />
     <Compile Include="Assets\Scripts\DayCycleMusic.cs" />
     <Compile Include="Assets\Scripts\DefeatCounter.cs" />
@@ -78,6 +79,7 @@
     <Compile Include="Assets\Scripts\StartGame.cs" />
     <Compile Include="Assets\Scripts\TextFadeIn.cs" />
     <Compile Include="Assets\Scripts\Thirst.cs" />
+    <Compile Include="Assets\Scripts\TumbleweedMovement.cs" />
     <None Include="Assets\Materials\Shaders\Vertex_Color_Unlit.shader" />
     <None Include="Assets\Materials\Shaders\Vertex_Color_Basic.shader" />
     <None Include="Assets\Prefabs\LowPolyTreePack\readme.txt" />
