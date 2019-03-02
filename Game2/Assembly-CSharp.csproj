@@ -63,11 +63,11 @@
   <ItemGroup>
     <Compile Include="Assets\AssetsStoreStuff\Chibi Mummy\Misc\Scripts\buttonControl_script.cs" />
     <Compile Include="Assets\AssetsStoreStuff\Chibi Mummy\Misc\Scripts\CharMovement.cs" />
-    <Compile Include="Assets\ErbGameArt\Dynamic sky shader\Demo scene\SkyboxRotator.cs" />
     <Compile Include="Assets\Scripts\AnimController.cs" />
     <Compile Include="Assets\Scripts\CameraAdjusting.cs" />
     <Compile Include="Assets\Scripts\Collectibles.cs" />
     <Compile Include="Assets\Scripts\Consumer.cs" />
+    <Compile Include="Assets\Scripts\DarkWasTheNight.cs" />
     <Compile Include="Assets\Scripts\DayCycleMusic.cs" />
     <Compile Include="Assets\Scripts\DefeatCounter.cs" />
     <Compile Include="Assets\Scripts\Enemy.cs" />
