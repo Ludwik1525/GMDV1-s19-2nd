@@ -28,6 +28,10 @@ public class PlayerMovement : MonoBehaviour {
 
     void FixedUpdate()
     {
+        if (!Physics.Raycast(transform.position, -transform.up, 0.0001f))
+        {
+            isGrounded = false;
+        }
 
         if (Input.GetKey(KeyCode.W))
         {

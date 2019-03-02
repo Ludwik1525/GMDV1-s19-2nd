@@ -31,7 +31,8 @@ public class Health : MonoBehaviour
 	
 	void Update () {
 
-        if(enterObstacle)
+
+        if (enterObstacle)
         {
             //deal damage if obstacle entered
             if (currentX > emptyHealth)
