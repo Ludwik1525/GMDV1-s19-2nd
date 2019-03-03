@@ -137,7 +137,7 @@ TextMesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 32388434}
-  m_Text: "Player controls:\n\nW S A D - Moving and rotating\nSpacebar - Sprint\nE
+  m_Text: "Player controls:\n\nW S A D - Moving and rotating\nHold Spacebar - Sprint\nE
     - Jump (While sprinting)\nR - Turning on/off the reflector\nArrow Up / Down -
     Adjusting camera\n\n\t[Press any key to continue]"
   m_OffsetZ: 0
@@ -292,10 +292,11 @@ TextMesh:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1129337445}
   m_Text: "After a heavy sandstorm you got lost in a desert,\nyour goal is to survive
-    and find your way out.\n\nBeware wild animals and other dangers that can \nbe
-    waiting just around the corner (if a desert has any).\n\nRemember you need to
-    get water in order to survive,\nIf you run, you get more thirsty than normally.\n\n\t\t\t\t[Press
-    any key to continue]"
+    and collect all the diamonds, as they \ncan help you getting out of here and...
+    ok, they can't, they are\njust stones... you're just greedy as hell...\nBeware
+    dangers that can be waiting just around the\ncorner (if a desert has any).\nRemember
+    you need to get water in order to survive,\nIf you run (or light the lamp), you
+    get more thirsty \nthan normally.\n\n\t\t\t\t[Press any key to continue]"
   m_OffsetZ: 0
   m_CharacterSize: 1
   m_LineSpacing: 1
