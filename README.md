@@ -7,6 +7,7 @@ Requirements:<br/>
     -Textures ✓<br/>
     -A custom skybox ✓<br/>
     -Multiple lights ✓<br/>
-    -Particles<br/>
+    -Particles ✓<br/>
     -Imported 3D assets ✓<br/>
     -Audio (background music and effects) ✓<br/>
+    DONE
