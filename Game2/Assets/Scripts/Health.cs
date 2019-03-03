@@ -22,6 +22,7 @@ public class Health : MonoBehaviour
     public float HPrestore;
     //variable to store current x coordinate of health bar
     public float currentX;
+    public Camera camera;
     
 	void Start ()
     {
@@ -31,6 +32,21 @@ public class Health : MonoBehaviour
 	
 	void Update () {
 
+        if (camera.transform.position.y < -10)
+        {
+            if (currentX > emptyHealth)
+            {
+                healthBarEmpty.transform.position -= new Vector3(1f * Time.deltaTime * obstaclesDMG, 0, 0);
+                currentX -= 1f * Time.deltaTime * obstaclesDMG;
+                this.gameObject.tag = "PlayerHurt";
+            }
+
+            //load defeat scene if health below 0
+            if (currentX <= emptyHealth)
+            {
+                SceneManager.LoadScene("Defeat");
+            }
+        }
 
         if (enterObstacle)
         {
@@ -60,7 +76,7 @@ public class Health : MonoBehaviour
             }
 
             //load defeat scene if health below 0
-            if (currentX < emptyHealth)
+            if (currentX <= emptyHealth)
             {
                 SceneManager.LoadScene("Defeat");
             }

@@ -23,31 +23,32 @@ public class Thirst : MonoBehaviour
     public float currentThirstX;
     public float emptyHealth;
     //variable to store current x coordinate of health bar
-    public float currentHealthX;
     //variable to set HP loss rate if thirst bar is empty
     public float HPlossRate;
     public GameObject reflector;
+    private Health healthScript;
 
     void Start()
     {
         //assign health bar and thirst bar x coordinates to max health at first
         currentThirstX = thirstBarEmpty.GetComponent<RectTransform>().anchoredPosition.x;
-        currentHealthX = healthBarEmpty.GetComponent<RectTransform>().anchoredPosition.x;
+        healthScript = GetComponent<Health>();
     }
 
     void Update()
     {
+        
 
         if (currentThirstX > emptyThirst)
         {
             //set thirst loss while running
             if (Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.Space))
             {
-                if(reflector.gameObject.tag == "LightOn")
+                if (reflector.gameObject.tag == "LightOn")
                 {
                     thirstBarEmpty.transform.position -=
-                        new Vector3(1f * Time.deltaTime * (dehydrationRateRunning+ dehydrationRateReflector), 0, 0);
-                    currentThirstX -= 1f * Time.deltaTime * (dehydrationRateRunning+ dehydrationRateReflector);
+                        new Vector3(1f * Time.deltaTime * (dehydrationRateRunning + dehydrationRateReflector), 0, 0);
+                    currentThirstX -= 1f * Time.deltaTime * (dehydrationRateRunning + dehydrationRateReflector);
                 }
                 else
                 {
@@ -76,21 +77,21 @@ public class Thirst : MonoBehaviour
         //set what happens when thirst bar is empty
         if (currentThirstX <= emptyThirst)
         {
-            if (currentHealthX > emptyHealth)
+            if (healthScript.currentX > emptyHealth)
             {
                 healthBarEmpty.transform.position -= new Vector3(1f * Time.deltaTime * HPlossRate, 0, 0);
-                currentHealthX -= 1f * Time.deltaTime * HPlossRate;
+                healthScript.currentX -= 1f * Time.deltaTime * HPlossRate;
+            }
+
+        //load defeat scene when health bar is empty
+            if (healthScript.currentX <= emptyHealth)
+            {
+                SceneManager.LoadScene("Defeat");
             }
         }
 
-        //load defeat scene when health bar is empty
-        if (currentHealthX < emptyHealth)
-        {
-            SceneManager.LoadScene("Defeat");
-        }
-
-        //restore thirst
-        if (enterDrink)
+    //restore thirst
+    if (enterDrink)
         {
             if (currentThirstX + thirstRestore > fullThirst)
             {
