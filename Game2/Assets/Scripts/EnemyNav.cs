@@ -11,26 +11,28 @@ public  Transform playerPos,enemyPosition;
 
 public  Vector3 enemyPositionVec3, playerPositionVec3;
 
-public  float distance, timeOut;
+public  float distance, timeOut, destinationTime;
 
 private  NavMeshAgent navMeshAgent;
 
 public Rigidbody rb;
 public Animator anim;
 
-void Awake()
-	{
-	}
+
+
 
     void Start()
-    {		
+    {	
+			
 		anim = GetComponentInChildren<Animator>();
         rb = GetComponent<Rigidbody>();
-		anim.SetBool("isIdle", true);
+	
         navMeshAgent = GetComponent<NavMeshAgent>();
-		navMeshAgent.destination = new Vector3(Random.Range(1f,10f),0,Random.Range(1f,10f));
-		anim.SetBool("isIdle", false);
+		navMeshAgent.destination = new Vector3(Random.Range(-1f,1f),0,Random.Range(-1f,1f));
+		
 		anim.Play("crippledWalk");
+		destinationTime = 250;
+	
     }
 	
 	// Update is called once per frame
@@ -38,8 +40,11 @@ void Awake()
 		
 		if(isClose()){
 			Chase();
+			Hit();
 		} else{
 			Roam();
+			anim.SetBool("isClose", false);
+			
 		}		
 			
 		}
@@ -59,7 +64,7 @@ void Awake()
 
 	private  void Roam(){
 		
-		if(timeOut >= 1000) {
+		if(timeOut >= 10000) {
 			Debug.Log("Going for the kill now");
 			Chase();						
 		} else {
@@ -72,19 +77,25 @@ void Awake()
 		float close = getDistance();
 		if(close <= 1f){
 			anim.Play("Hitting1");
+			anim.SetBool("isClose", true);
+			
+		}else {
+			anim.Play("crippledWalk");
 		}
 	}
 
-	private Vector3 MakeRandomVector(){
+	private Vector3 MakeRandomVector(){		
 		timeOut++;
 		Debug.Log(timeOut + "Timeout");
 		Vector3 randomDestination = navMeshAgent.destination;
+		Debug.Log(destinationTime + "destinationTime");
 
-		if(timeOut == 250){
-			randomDestination = new Vector3(Random.Range(1f,10f),0,Random.Range(1f,10f));
-		}else if( timeOut == 500){
-			randomDestination = new Vector3(Random.Range(1f,10f),0,Random.Range(1f,10f));
+		if(timeOut == destinationTime){
+			randomDestination = new Vector3(Random.Range(-1f,1f),0,Random.Range(-1f,1f));
+			Debug.Log(randomDestination + "New dest");
+			destinationTime+= 250;
 		}
+		Debug.Log(randomDestination + "New dest");
 		return randomDestination;
 	}
 
@@ -95,6 +106,8 @@ void Awake()
 		
 		return Vector3.Distance(enemyPositionVec3,playerPositionVec3);
 	}
+
+	
 	
 
 	
