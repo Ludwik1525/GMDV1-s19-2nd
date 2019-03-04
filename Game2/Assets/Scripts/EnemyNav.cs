@@ -17,21 +17,21 @@ private  NavMeshAgent navMeshAgent;
 
 public Rigidbody rb;
 public Animator anim;
-private int seconds, chaseDistance;
+private int seconds;
+public int  chaseDistance;
 
 
-		void Awake(){
+		
+    void Start()
+    {			
 			anim = GetComponentInChildren<Animator>();
       rb = GetComponent<Rigidbody>();
 			anim.SetBool("isClose", false);
 			anim.SetBool("noDest", true);
 			anim.Play("Idle");
-		}
-    void Start()
-    {			
-    navMeshAgent = GetComponent<NavMeshAgent>();
-		seconds = 0;
-		chaseDistance = 50;		
+    	navMeshAgent = GetComponent<NavMeshAgent>();
+			seconds = 0;
+			chaseDistance = 50;		
 	
     }
 	
@@ -67,8 +67,7 @@ private int seconds, chaseDistance;
 		}
 		else {
 
-			anim.Play("crippledWalk");
-			anim.SetBool("isClose", false);
+			Roam();
 		}
 	}
 	private void Roam(){
@@ -96,8 +95,8 @@ private int seconds, chaseDistance;
 
 				seconds++;		
 			yield return new WaitForSeconds(1);
-				if(seconds == 15){
-					navMeshAgent.destination = new Vector3(Random.Range(-1f,1f),0,Random.Range(-1f,1f));
+				if(seconds == 5){
+					navMeshAgent.destination = new Vector3(Random.Range(-1f,1f),0,Random.Range(-1f,1f)).normalized;
 					anim.Play("crippledWalk");
 					anim.SetBool("noDest", false);					
 					seconds = seconds * 0;					
