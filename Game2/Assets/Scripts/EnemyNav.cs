@@ -9,9 +9,9 @@ public class EnemyNav : MonoBehaviour {
 
 public  Transform playerPos,enemyPosition;
 
-public  Vector3 enemyPositionVec3, playerPositionVec3;
+private  Vector3 enemyPositionVec3, playerPositionVec3;
 
-public  float distance, timeOut, destinationTime;
+private  float distance, timeOut, destinationTime;
 
 private  NavMeshAgent navMeshAgent;
 
@@ -98,6 +98,7 @@ private int seconds, chaseDistance;
 			yield return new WaitForSeconds(1);
 				if(seconds == 15){
 					navMeshAgent.destination = new Vector3(Random.Range(-1f,1f),0,Random.Range(-1f,1f));
+					anim.Play("crippledWalk");
 					anim.SetBool("noDest", false);					
 					seconds = seconds * 0;					
 					StopCoroutine(NewDestinationCountdown());
