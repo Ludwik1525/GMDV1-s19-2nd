@@ -17,10 +17,7 @@ private  NavMeshAgent navMeshAgent;
 
 public Rigidbody rb;
 public Animator anim;
-private int seconds;
-
-
-
+private int seconds, chaseDistance;
 
 
 		void Awake(){
@@ -33,7 +30,8 @@ private int seconds;
     void Start()
     {			
     navMeshAgent = GetComponent<NavMeshAgent>();
-		seconds = 0;		
+		seconds = 0;
+		chaseDistance = 50;		
 	
     }
 	
@@ -44,13 +42,12 @@ private int seconds;
 			Chase();
 			
 		} else{
-			Roam();
-			
+			Roam();			
 		}				
 		}
 	private  bool isClose(){
 	
-		if(getDistance() <= 10){
+		if(getDistance() <= chaseDistance){
 			
 			return true;
 		}
