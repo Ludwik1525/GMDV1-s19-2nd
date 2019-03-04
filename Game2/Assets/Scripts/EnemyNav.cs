@@ -17,21 +17,23 @@ private  NavMeshAgent navMeshAgent;
 
 public Rigidbody rb;
 public Animator anim;
+private int seconds;
 
 
 
 
+
+		void Awake(){
+			anim = GetComponentInChildren<Animator>();
+      rb = GetComponent<Rigidbody>();
+			anim.SetBool("isClose", false);
+			anim.SetBool("noDest", true);
+			anim.Play("Idle");
+		}
     void Start()
-    {	
-			
-		anim = GetComponentInChildren<Animator>();
-        rb = GetComponent<Rigidbody>();
-	
-        navMeshAgent = GetComponent<NavMeshAgent>();
-		navMeshAgent.destination = new Vector3(Random.Range(-1f,1f),0,Random.Range(-1f,1f));
-		
-		anim.Play("crippledWalk");
-		destinationTime = 250;
+    {			
+    navMeshAgent = GetComponent<NavMeshAgent>();
+		seconds = 0;		
 	
     }
 	
@@ -40,64 +42,48 @@ public Animator anim;
 		
 		if(isClose()){
 			Chase();
-			Hit();
+			
 		} else{
 			Roam();
-			anim.SetBool("isClose", false);
 			
-		}		
-			
+		}				
 		}
-	private  void Chase(){
-		navMeshAgent.destination = playerPos.position;
-	}
-
 	private  bool isClose(){
 	
-		if(getDistance() <= 5){
+		if(getDistance() <= 10){
+			
 			return true;
 		}
+		anim.SetBool("isClose", false);
 
 		return false;
 
 	}
+	private  void Chase(){
+		navMeshAgent.destination = playerPos.position;
+		anim.SetBool("noDest", false);
 
-	private  void Roam(){
-		
-		if(timeOut >= 10000) {
-			Debug.Log("Going for the kill now");
-			Chase();						
-		} else {
-			navMeshAgent.destination = MakeRandomVector();
-		}
-		
-	}
+		if(getDistance() <= 4){
 
-	public void Hit(){
-		float close = getDistance();
-		if(close <= 1f){
-			anim.Play("Hitting1");
 			anim.SetBool("isClose", true);
-			
-		}else {
+			anim.Play("Hitting1");		
+		}
+		else {
+
 			anim.Play("crippledWalk");
+			anim.SetBool("isClose", false);
 		}
 	}
-
-	private Vector3 MakeRandomVector(){		
-		timeOut++;
-		Debug.Log(timeOut + "Timeout");
-		Vector3 randomDestination = navMeshAgent.destination;
-		Debug.Log(destinationTime + "destinationTime");
-
-		if(timeOut == destinationTime){
-			randomDestination = new Vector3(Random.Range(-1f,1f),0,Random.Range(-1f,1f));
-			Debug.Log(randomDestination + "New dest");
-			destinationTime+= 250;
-		}
-		Debug.Log(randomDestination + "New dest");
-		return randomDestination;
+	private void Roam(){
+		//indsæt wait her
+			
+			if(seconds<1){
+				StartCoroutine(NewDestinationCountdown());		
+				print("starting routine");
+			}	
+		
 	}
+	
 
 	public float getDistance(){
 		enemyPositionVec3 = enemyPosition.position;
@@ -107,7 +93,20 @@ public Animator anim;
 		return Vector3.Distance(enemyPositionVec3,playerPositionVec3);
 	}
 
-	
+	private IEnumerator NewDestinationCountdown()
+	{	
+		while(true){
+
+				seconds++;		
+			yield return new WaitForSeconds(1);
+				if(seconds == 15){
+					navMeshAgent.destination = new Vector3(Random.Range(-1f,1f),0,Random.Range(-1f,1f));
+					anim.SetBool("noDest", false);					
+					seconds = seconds * 0;					
+					StopCoroutine(NewDestinationCountdown());
+				}
+		}
+	}
 	
 
 	
